@@ -3,19 +3,21 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
-	public static void main() {
-		int sum = 0;
+	public static void main(String[] arg) {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		int a = 0;
-		int b = 0;
-		
+        String inStr = "";
+
 		try {
-			a = new Integer(in.readLine());
-			b = new Integer(in.readLine());
-		} catch (IOException e) {
+			int a = 0;
+			int b = 0;
+			inStr = in.readLine();
+			String[] params = inStr.split(" "); 
+			a = Integer.parseInt(params[0]);
+			b = Integer.parseInt(params[1]);
+	        System.out.print(a + b);
+		} catch (NumberFormatException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		
-		System.out.print(a + b);
-		return ;
 	}
 }
