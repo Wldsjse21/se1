@@ -1,5 +1,3 @@
-package com.wlse;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,7 +11,7 @@ public class Main {
 		
 		a = new Integer(in.readLine());
 		b = new Integer(in.readLine());
-		System.out(a + b);
+		System.out.print(a + b);
 		return ;
 	}
 }
