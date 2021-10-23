@@ -9,8 +9,8 @@ public class Main {
 		int a = 0;
 		int b = 0;
 		
-		a = new Integer(in.readLine());
-		b = new Integer(in.readLine());
+		a = new Integer.parseInt(in.readLine());
+		b = new Integer.parseInt(in.readLine());
 		System.out.print(a + b);
 		return ;
 	}
