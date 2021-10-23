@@ -13,7 +13,7 @@ public class Main {
 		
 		a = new Integer(in.readLine());
 		b = new Integer(in.readLine());
-		a + b;
+		System.out(a + b);
 		return ;
 	}
 }
