@@ -11,10 +11,10 @@ public class Example {
 		int b = 0;
 
 		try {
-			String[] params = in.readLine().split(" "); 
+			String[] params = in.readLine().split(" ");
 			a = Integer.parseInt(params[0]);
 			b = Integer.parseInt(params[1]);
-	        System.out.print(a + b);
+			System.out.print(a + b);
 		} catch (NumberFormatException | IOException e) {
 		}
 	}
