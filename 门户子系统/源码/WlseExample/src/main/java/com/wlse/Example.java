@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Plus {
+public class Main {
 	public static void main() {
 		int sum = 0;
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -13,7 +13,7 @@ public class Plus {
 		
 		a = new Integer(in.readLine());
 		b = new Integer(in.readLine());
-		
-		return a + b;
+		a + b;
+		return ;
 	}
 }
