@@ -6,9 +6,9 @@ import java.io.InputStreamReader;
 
 public class Example {
 	public static void main(String[] arg) {
-		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		int a = 0;
-		int b = 0;
+		BufferedReader in = new BufferedReader(
+				new InputStreamReader(System.in));
+		int a = 0, b = 0;
 
 		try {
 			String[] params = in.readLine().split(" ");
