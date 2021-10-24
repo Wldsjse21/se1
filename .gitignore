@@ -1,3 +1,13 @@
-/.idea/modules.xml
-/.idea/inspectionProfiles/profiles_settings.xml
-/.idea/se1.iml
+misc.xml
+modules.xml
+vcs.xml
+workspace.xml
+profiles_settings.xml
+*.iml
+target
+.classpath
+.project
+.settings
+*.class
+bin
+.vscode/settings.json
