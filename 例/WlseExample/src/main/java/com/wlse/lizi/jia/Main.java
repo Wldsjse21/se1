@@ -1,4 +1,4 @@
-package com.wlse.jia;
+package com.wlse.lizi.jia;
 
 import java.util.Scanner;
 

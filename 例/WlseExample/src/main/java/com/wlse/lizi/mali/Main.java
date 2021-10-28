@@ -1,4 +1,4 @@
-package com.wlse.mali;
+package com.wlse.lizi.mali;
 
 public class Main{
     public static void main(String []arg){

@@ -1,4 +1,4 @@
-package com.wlse;
+package com.wlse.jiang.jichu;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

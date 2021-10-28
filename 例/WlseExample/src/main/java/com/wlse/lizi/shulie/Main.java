@@ -1,4 +1,4 @@
-package com.wlse.shulie;
+package com.wlse.lizi.shulie;
 
 import java.util.Scanner;
 
