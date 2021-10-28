@@ -35,7 +35,7 @@ public class ExampleTest
     {
         assertTrue( true );
     }
-    /*
+
     public void testAdd() {
         Example Example = new Example();
         int result = Example.add(50, 20);
@@ -46,5 +46,9 @@ public class ExampleTest
         int result = Example.sub(50, 20);
         assertEquals(30, result);
     }
-    */
+
+    @Override
+    public String toString() {
+        return "ExampleTest []";
+    }
 }
