@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 
-// 讲解的基础例子
-// 包涵封装输入输出（使用系统的输入输出，可以方便地替换成使用文件作为输入输出），测试驱动的演示。
+// 解题
+// 基础的空解例子。
 
 public class Example {
 	public void jieti(BufferedReader in, BufferedWriter out) throws IOException {
