@@ -22,13 +22,4 @@ public class Example {
 		// 输出
 		out.write(ans.toString());
 	}
-
-    public int add(int i, int j) {
-        return i + j;
-    }
-
-    public int sub(int i, int j) {
-        return 0;
-    }
-
 }
