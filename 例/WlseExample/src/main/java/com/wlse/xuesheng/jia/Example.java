@@ -9,17 +9,15 @@ import java.io.IOException;
 
 public class Example {
 	public void jieti(BufferedReader in, BufferedWriter out) throws IOException {
-		int a = 0, b = 0;
-
 		// 输入
-		String[] params = in.readLine().split(" ");
-		a = Integer.parseInt(params[0]);
-		b = Integer.parseInt(params[1]);
+		// String[] params = in.readLine().split(" ");
+		// int a = Integer.parseInt(params[0]);
+		// int b = Integer.parseInt(params[1]);
 
 		// 运算
-		Integer ans = a + b;
+		// 具体的算法操作。
 
 		// 输出
-		out.write(ans.toString());
+		out.write("");
 	}
 }
