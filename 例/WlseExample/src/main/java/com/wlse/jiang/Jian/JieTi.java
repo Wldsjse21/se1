@@ -1,4 +1,4 @@
-package com.wlse.jiang.jichu;
+package com.wlse.jiang.Jian;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

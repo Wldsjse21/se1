@@ -16,7 +16,7 @@ public class JianCeShiShuJu {
                 new FileWriter("shulie.in"));
 
             // 把测试数据写入文件
-            out.write(100 + "\n"); 
+            out.write(1000 + "\n"); 
 
             out.close();
         } catch (FileNotFoundException e) {

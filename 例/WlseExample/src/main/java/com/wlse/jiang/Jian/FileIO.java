@@ -1,4 +1,4 @@
-package com.wlse.jiang.jichu;
+package com.wlse.jiang.Jian;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+
+import com.wlse.jiang.jichu.Example;
 
 public class FileIO {    
 	public static void main(String[] arg) {
