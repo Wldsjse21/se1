@@ -10,7 +10,7 @@ import java.io.IOException;
 public class ShiZiHeBing {
 	public void jieti(BufferedReader in, BufferedWriter out) throws IOException {
 		// 输入
-		final int Num = 41000;
+		final int Num = 10;
 		long a[] = new long[Num];		
 		int s = Integer.parseInt(in.readLine());
 		int n = s;
