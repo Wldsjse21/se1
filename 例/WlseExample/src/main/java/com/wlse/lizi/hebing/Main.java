@@ -25,6 +25,9 @@ public class Main {
 			in.close();
 			out.close();
 		} catch (FileNotFoundException e1) {
+			e1.printStackTrace();
+		} catch (NullPointerException e1) {
+			e1.printStackTrace();
 		} catch (IOException e) {
 		}
 	}
