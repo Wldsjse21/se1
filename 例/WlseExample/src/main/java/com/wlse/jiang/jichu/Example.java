@@ -22,4 +22,22 @@ public class Example {
 		// 输出
 		out.write(ans.toString());
 	}
+
+	public Integer jia(int i, int j) {
+		return i + j;
+	}
+
+	public Integer jian(int i, int j) {
+		return i - j;
+	}
+
+    public Integer cheng(int i, int j) {
+        return i * j;
+    }
+
+    public Integer chu(int i, int j) {
+        return i / j;
+    }
+
+
 }
