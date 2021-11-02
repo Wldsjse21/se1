@@ -40,39 +40,47 @@ import java.io.IOException;
 public class ShiZiHeBing {
 	public void jieti(BufferedReader in, BufferedWriter out) throws IOException {
 		// 输入
-		final int Num = 20;
-		final int N = 0x3f3f3f3f;
-		int a[] = new int[Num + 1];
+
+		final int DaShu = 0x3f3f3f3f;
 		// 石子堆数		
-		int n = Integer.parseInt(in.readLine());
-		String[] params = in.readLine().split(" ");
-		for(int i=0;i<n;i++)
-			a[i] = Integer.parseInt(params[i]);
+		int duiShu = Integer.parseInt(in.readLine());
+		int shiZiShu[] = new int[duiShu + 1];
+		String[] duRu = in.readLine().split(" ");
+		for(int i=0;i<duiShu;i++)
+			shiZiShu[i] = Integer.parseInt(duRu[i]);
 
 		// 运算
 
-        // 算出石子总数
-        int[] sum = new int[Num + 1];
-        for (int i = 1; i < Num; i++)
-            sum[i] = sum[i-1] + a[i-1];
+        // 算出前面石子的总数
+        int[] shiZiHe = new int[duiShu + 1];
+        for (int i = 1; i <= duiShu; i++)
+            shiZiHe[i] = shiZiHe[i-1] + shiZiShu[i-1];
 
         // 使用矩阵运算，求得最小和最大得分
-		int f1[][] = new int[Num + 1][Num + 1];
-		int f[][] = new int[Num + 1][Num + 1];
-        for (int len = 2; len <= n; len++)
-            for (int i = 1; i < n - len + 2; i++) {
-				int j = len + i - 1;
-                f1[i][j] = N;
+		int zuiXiao[][] = new int[duiShu + 1][duiShu + 1];
+		int zuiDa[][] = new int[duiShu + 1][duiShu + 1];
+		// 分段点，长度
+        for (int chang = 2; chang <= duiShu; chang++)
+			// 行
+            for (int i = 1; i <= duiShu - chang + 1; i++) {
+				// 列
+				int j = chang + i - 1;
+                zuiXiao[i][j] = DaShu;
+				// 动态变量
                 for (int k = i; k < j; k++) {
-                    f1[i][j] = Math.min(f1[i][j], f1[i][k] + f1[k+1][j] + sum[j] - sum[i-1]);
-                    f[i][j] = Math.max(f[i][j], f[i][k] + f[k+1][j] + sum[j]-sum[i-1]);
+                    zuiXiao[i][j] = Math.min(zuiXiao[i][j], zuiXiao[i][k] + zuiXiao[k+1][j] + shiZiHe[j] - shiZiHe[i-1]);
+                    zuiDa[i][j] = Math.max(zuiDa[i][j], zuiDa[i][k] + zuiDa[k+1][j] + shiZiHe[j]-shiZiHe[i-1]);
 				}
 			}
 
 		// 输出
-		Integer ii = f1[1][n];
-		out.write(ii.toString() + "\n");
-		ii = f[1][n];
-		out.write(ii.toString() + '\n');
+		Integer xiaoShu = zuiXiao[1][duiShu];
+		out.write(xiaoShu.toString() + "\n");
+		Integer daShu = zuiDa[1][duiShu];
+		out.write(daShu.toString() + '\n');
+	}
+
+	public static void main(String[] arg) {
+		Main.main(arg);
 	}
 }
