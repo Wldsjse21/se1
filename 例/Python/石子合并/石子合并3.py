@@ -42,55 +42,54 @@ Author: CongHS
 Date: 2021-09-06
 '''
 import numpy as np
-N=0x3f3f3f3f
+MAX_NUM=0x7fffffff
 class Merge(object):
     @staticmethod
     def show():
         # 石子堆数
-        sN = input()
-        iNum = int(sN)
+        n = int(input())
 
-        N = 41000
-        a = np.zeros([N], dtype=np.int64)
-        ans = 0
+        N = 12
+        v = np.array(np.arange(N).reshape(N,1))
+
+        v[N-1] = 0
+        v[0] = MAX_NUM
+        v[n + 1] = MAX_NUM
         # 每堆石子数
-        for i in range(1, iNum + 1) :
-            a[i] = int(input())
+        for i in range(1, n + 1) :
+            v[i] = int(input())
 
-        n = iNum
-        ans = 0
-        now = 1
-        pro = 0
-        while (now < n - 1) :
-            for pro in range(now, n) :
-                if (a[pro + 2] < a[pro]) :
-                    continue
-                a[pro + 1] += a[pro]
-                ans += a[pro + 1]
-                k = 0
-                for k in range(pro, now, -1) :
-                    a[k] = a[k-1]
+        cnt = 0
+        b = np.array(np.arange(N * N).reshape(N,N))
+        b *= 0
+        while n > 1:
+            n -= 1
 
-                now += 1
-                k = pro + 1
-                while (now < k and a[k - 1] < a[k]):
-                    a[k] ^= a[k-1]
-                    a[k-1] ^= a[k]
-                    a[k] ^= a[k-1]
-                    k -= 1
-                break
+            for c in range(1, n+2):
+                b[cnt,c] = v[c]
+            b[cnt, N - 1] = v[len(v) - 1]
+            cnt += 1
 
-            if (pro == n - 1) :
-                a[n-1] += a[n]
-                ans += a[n-1]
-                n -= 1
+            for k in range(1, (n + 1) + 1):
+                if v[k - 1] < v[k + 1]:
+                    break
+            sum = v[k] + v[k - 1]
+            for j in range(k - 1, -1, -1):
+                if v[j] > v[k] + v[k - 1]:
+                    break
+            v = np.delete(v, k - 1, 0)
+            v = np.delete(v, k - 1, 0)
+            v = np.insert(v, j + 1, sum, 0)
 
-        if (now == n-1) :
-            ans += (a[n-1]+a[n])
+            v[len(v) - 1] += sum[0]
 
+        for c in range(1, n + 2):
+            b[cnt, c] = v[c]
+        b[cnt, N - 1] = v[len(v) - 1]
+        cnt += 1
 
         #输出
-        print(ans)
+        print(v[len(v) - 1])
 
 def main():
     mer = Merge()
