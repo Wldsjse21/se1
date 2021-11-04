@@ -27,10 +27,14 @@
 
 输入
 6
-4 5 9 4 3 7
+4
+5
+9
+4
+3
+7
 输出
-44
-54
+80
 
 Version: 0.1
 Author: CongHS
@@ -45,7 +49,9 @@ class Merge(object):
         sN = input()
         iNum = int(sN)
         # 每堆石子数
-        stocks = input().split()
+        stocks = np.array(np.arange(iNum).reshape(iNum,1))
+        for i in range(0, iNum) :
+            stocks[i] = int(input())
 
         # 算出石子总数
         sum = np.zeros(iNum +1, dtype=np.int32)
@@ -68,7 +74,6 @@ class Merge(object):
 
         #输出
         print(f1[1,iNum])
-        print(f[1,iNum])
 
 def main():
     mer = Merge()
